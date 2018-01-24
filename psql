@@ -1,0 +1,5 @@
+#!/bin/bash
+
+args=`printf "%q"" " "$@"; echo "";`
+docker exec -ti `docker ps -aqf "name=POSTGRES"` bash -c "psql $args"
+
